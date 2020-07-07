@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="assets/js/webfontloader.min.js"></script>
+    <title>Simple App Login</title>
+  </head>
+  <body class="bg-section5">
+    <div class="main-header main-header-fullwidth main-header-has-header-standard">
+        <div class="header-spacer"></div>
+        <div class="container">
+            <div class="row display-flex">
+                <div class="col col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                    <div class="landing-content">
+                        <h1>Selamat Datang !</h1>
+                    </div>
+                </div>
+                <div class="col col-xl-7 ml-auto col-lg-6 col-md-12 col-sm-12 col-12">
+
+                    <div class="ui-block">
+                        <!-- Login-Registration Form  -->
+
+                        <div class="news-feed-form">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link inline-items" data-toggle="tab" href="#register" role="tab">
+                                        <svg class="olymp-register-icon"><use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-register-icon"></use></svg>
+                                        <span>Registrasi</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active inline-items" data-toggle="tab" href="#login" role="tab">
+                                        <svg class="olymp-login-icon"><use xlink:href="assets/svg-icons/sprites/icons.svg#olymp-login-icon"></use></svg>
+                                        <span>Login</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="registration-form">
+                            <!-- Tab panes -->
+                            <div class="ui-block-content">	
+                                <div class="tab-content">
+
+                                    <div class="tab-pane" id="register" role="tabpanel" data-mh="log-tab">
+
+                                        <form id="formregister" class="content" enctype="multipart/form-data" onsubmit="return false">
+                                            <div class="row">
+                                                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Nomor HP</label>
+                                                        <input id="nohp_r" class="form-control" placeholder="" name="nohp" >
+                                                    </div>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Password</label>
+                                                        <input id="pass_r" class="form-control" placeholder="" type="password" name="pasword">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-binoculars" aria-hidden="true" onmouseover="lihatpasword();" onmouseout="sembunyipasword ();"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Country</label>
+                                                        <input id="country_r" class="form-control" placeholder="" name="country" >
+                                                    </div>
+                                                    <!-- <input id="device_type" style="display: none;" name="device_type" onmousemove="getOS()"> -->
+                                                    <!-- <input id="latlong" style="display: none;" name="latlong" > -->
+                                                </div>
+
+                                                
+                                                <div class="container align-center">
+                                                    <input onclick="registrasi()" class="btn btn-lg btn-primary full-width" type="submit" value="Registrasi" />
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                    <div class="tab-pane active" id="login" role="tabpanel" data-mh="log-tab">
+                                        <form id="formlogin" class="content" method="post" action="<?php echo base_url().'/autentifikasi/login';?>">
+                                            <div class="row">
+                                                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Nomor HP</label>
+                                                        <input id="nohp_l" class="form-control" placeholder="" name="nohp" >
+                                                    </div>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Password</label>
+                                                        <input id="pass_l" class="form-control" placeholder="" type="password" name="pasword">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-binoculars" aria-hidden="true" onmouseover="lihatpasword();" onmouseout="sembunyipasword ();"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                                                    <p>Belum punya akun? <a href="#">Register sekarang juga!</a> </p>
+                                                </div>
+                                                <div class="col col-12 col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                                                    <input onclick="login()" class="btn btn-lg btn-primary full-width" type="submit" value="Login" />
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                    <!-- ... end Login-Registration Form  -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ... Window-popup verivikasi -->
+    <div class="modal fade" id="verivikasi" tabindex="-1" role="dialog" aria-labelledby="edit-widget-pool" aria-hidden="true">
+        <div class="modal-dialog window-popup edit-widget edit-widget-pool" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h6 class="title">Masukkan Kode Verivikasi</h6>
+                </div>
+
+                <div class="modal-body">
+                    <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Masukkan kode OTP</label>
+                            <input id="otp" class="form-control" name="kode" value="" type="text" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6 col-sm-12 col-12">
+                            <a onclick="kirim_ulang()" href="#" class="btn bg-twitter btn-md full-width">Kirim Ulang Kode</a>
+                        </div>
+
+                        <div class="col col-lg-6 col-sm-12 col-12">
+                            <a onclick="verivikasi()" href="#" type="submit" class="btn btn-primary btn-md full-width">Verivikasi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- ... JS -->
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<!-- <script src="assets/js/jquery-3.2.1.min.js"></script> -->
+<script src="assets/js/material.min.js"></script>
+<script src="assets/js/perfect-scrollbar.js"></script>
+<script src="assets/js/bootstrap-select.js"></script>
+
+<script src="assets/js/base-init.js"></script>
+<script defer src="assets/fonts/fontawesome-all.js"></script>
+
+<script src="assets/Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="app/verivikasi.js"></script>
+<script src="app/registrasi.js"></script>
+<script src="app/oauth.js"></script>
+
+<script type="text/javascript">
+function lihatpasword() {
+    var x = document.getElementById("pass_r");
+    var y = document.getElementById("pass_l");
+      x.type = "text";
+      y.type = "text";
+  }
+  function sembunyipasword() {
+    var x = document.getElementById("pass_r");
+    var y = document.getElementById("pass_l");
+      x.type = "password";
+      y.type = "password";
+  }
+
+
+//   function getOS() {
+//   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+//      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+//         document.getElementById("device_type").value = "0";
+//     }
+    
+//     if (/android/i.test(userAgent)) {
+//         document.getElementById("device_type").value = "1";
+//     }
+
+   
+
+//     document.getElementById("device_type").value = "2";
+
+// }
+
+// var LatLong = document.getElementById("latlong");
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else {
+//     LatLong.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
+
+// function showPosition(position) {
+// //   LatLong.innerHTML = "Latitude: " + position.coords.latitude +
+// //   "<br>Longitude: " + position.coords.longitude;
+//     return [position.coords.latitude, position.coords.longitude];
+// }
+  </script>
+  
+  </body>
+</html>

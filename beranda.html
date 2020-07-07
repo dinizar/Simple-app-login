@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/Bootstrap/dist/css/bootstrap-grid.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fonts.min.css">
+
+	<!-- Main Font -->
+	<script src="assets/js/webfontloader.min.js"></script>
+    <title>Simple App Login</title>
+  </head>
+  <body>
+    <div class="stunning-header bg-primary-opacity">
+        <div class="header-spacer--standard"></div>
+
+	    <div class="content-bg-wrap"></div>
+    </div>
+    <div class="container negative-margin-top50">
+        <div class="row">
+            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="ui-block">
+                    <div class="top-header top-header-favorit">
+                        <div class="top-header-thumb">
+                            <div class="top-header-author">
+                                <div class="author-thumb">
+                                    <img src="assets/photo/default.jpg" alt="author">
+                                </div>
+                                <div class="author-content">
+                                    <a href="#" class="h3 author-name">Nomor Hp</a>
+                                    <div class="country">Negara</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-section">
+                            <div class="row">
+                                <div class="col col-xl-8 m-auto col-lg-8 col-md-12">
+                                    <ul class="profile-menu">
+                                        <li>
+                                            <a id="career" onclick="career()" href="#" class="active"><i class="fa fa-newspaper"></i> Career education</a>
+                                        </li>
+                                        <li>
+                                            <a id="galeri" onclick="galeri()" href="#"><i class="fa fa-images"></i> Galeri</a>
+                                        </li>
+                                        <li>
+                                            <a id="message" onclick="message()" href="#"><i class="fa fa-comment"></i> Message</a>
+                                        </li>
+                                        <li>
+                                            <a id="editprofil" onclick="editprofil()" href="#"><i class="fa fa-cog"></i> Edit Profil</a>
+                                        </li>
+                                        <li>
+                                            <a onclick="logout()"href=""><i class="fa fa-sign-out-alt"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="career_element">
+        <div class="container">
+                <div class="col col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="ui-block-title">
+                            <div class="h6 title"><a href="#" data-toggle="modal" data-target="#tambah" class="btn btn-primary btn-md-2">Tambah +</a></div>
+                        </div>
+                </div>
+        </div>
+        <div class="container">
+            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="ui-block">
+                    <!--Table -->
+                    <table class="forums-table">
+                        <thead>
+                            <tr>
+                                <th class="forum">
+                                    Institusi
+                                </th>
+                                <th class="forum">
+                                    Tahun Masuk
+                                </th>
+                                <th class="forum">
+                                    Tahun Lulus
+                                </th>
+                                <th class="forum">
+                                    Jurusan
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="forum">
+                                   <p class="text">UPN</p>     
+                                </td>
+                                <td class="forum">
+                                    <p class="text">2015</p>
+                                </td>
+                                <td class="forum">
+                                    <p class="text">2019</p>
+                                </td>
+                                <td class="forum">
+                                    <p>Informatika</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ... Window-popup tambah career education -->
+        <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="edit-widget-pool" aria-hidden="true">
+            <div class="modal-dialog window-popup edit-widget edit-widget-pool" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h6 class="title">Masukkan Data</h6>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Institusi</label>
+                                <input id="otp" class="form-control" name="kode" value="" type="text" required>
+                            </div>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Tahun Masuk</label>
+                                <input id="otp" class="form-control" name="kode" value="" type="text" required>
+                            </div>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Tahun Lulus</label>
+                                <input id="otp" class="form-control" name="kode" value="" type="text" required>
+                            </div>
+                            <div class="form-group label-floating">
+                                <label class="control-label">Jurusan</label>
+                                <input id="otp" class="form-control" name="kode" value="" type="text" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col col-lg-6 col-sm-12 col-12">
+                                <a href="#" class="btn bg-twitter btn-md full-width">Cancel</a>
+                            </div>
+
+                            <div class="col col-lg-6 col-sm-12 col-12">
+                                <a onclick="" href="#" type="submit" class="btn btn-primary btn-md full-width">Tambah</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="galeri_element" style="display: none;">
+        <div class="container">
+            <div class="col col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="ui-block-title">
+                        <div class="h6 title"><a href="#" class="btn btn-primary btn-md-2">Upload +</a></div>
+                    </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">  
+                    <div class="photo-album-wrapper">				
+                        <div class="photo-item half-width">
+                            <img src="assets/img/photo-item1.jpg" alt="photo">
+                            <div class="overlay overlay-dark"></div>
+                        </div>
+
+                        <div class="photo-item col-4-width">
+                            <img src="assets/img/photo-item2.jpg" alt="photo">
+                            <div class="overlay overlay-dark"></div>
+                        </div>
+
+                        
+                        <div class="photo-item col-4-width">
+                            <img src="assets/img/photo-item3.jpg" alt="photo">
+                            <div class="overlay overlay-dark"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="message_element" style="display: none;">
+       MESSAGE
+    </div>
+
+    <div id="editprofil_element" style="display: none;">  
+        <div class="container">
+            <div class="row">
+                <div class="col col-xl-12 order-xl-2 col-lg-12 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+                    <div class="ui-block">
+                        <form id="form_profil" class="content needs-validation" multypart="upload/do_upload">
+                            <div class="row">
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Ganti foto profil</label>
+                                        <input value="" type="file" name="foto-profil" class="file-upload__label" id="File">
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div id="foto-preview"></div>
+                                <div>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+<!-- ... JS -->
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<!-- <script src="assets/js/jquery-3.2.1.min.js"></script> -->
+<script src="assets/js/material.min.js"></script>
+<script src="assets/js/perfect-scrollbar.js"></script>
+<script src="assets/js/bootstrap-select.js"></script>
+
+<script src="assets/js/base-init.js"></script>
+<script defer src="assets/fonts/fontawesome-all.js"></script>
+
+<script src="assets/Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="app/navigasi.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#File').on('change', function(){ //on file input change
+		if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
+    	{
+			$('#foto-preview').html(''); //clear html of output element
+			var data = $(this)[0].files; //this file data
+			
+			$.each(data, function(index, file){ //loop though each file
+				if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
+					var fRead = new FileReader(); //new filereader
+					fRead.onload = (function(file){ //trigger function on successful read
+					return function(e) {
+						var img = $('<img/>').addClass('thumb').attr('src', e.target.result); //create image element 
+						$('#foto-preview').append(img); //append image to output element
+					};
+				  	})(file);
+					fRead.readAsDataURL(file); //URL representing the file's data.
+				}
+			});
+			
+		}else{
+			alert("Your browser doesn't support File API!"); //if File API is absent
+		}
+	});
+});
+</script>
+
+</body>
